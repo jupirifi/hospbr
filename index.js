@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const app = require('./julianos-fantastic-site.webflow/images/js/webflow');
+const app = require('./app');
 const {logger, initLogCorrelation} = require('./utils/logging');
 const {fetchProjectId} = require('./utils/metadata');
 
