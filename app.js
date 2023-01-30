@@ -14,7 +14,7 @@
 
 const express = require('express');
 const {pinoHttp, logger} = require('./utils/logging');
-
+const path = require('path');
 const app = express();
 
 // Use request-based logger for log correlation
@@ -26,7 +26,7 @@ app.get('/', async (req, res) => {
   logger.info({logField: 'custom-entry', arbitraryField: 'custom-entry'}); // Example of structured logging
   // Use request-based logger with log correlation
   req.log.info('Child logger with trace Id.'); // https://cloud.google.com/run/docs/logging#correlate-logs
-  res.send('./julianos-fantastic-site.webflow/index.html');
+  res.sendFile(path.join(__dirname, './julianos-fantastic-site.webflow/index.htm');
 });
 
 module.exports = app;
